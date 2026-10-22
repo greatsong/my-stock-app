@@ -28,8 +28,8 @@ st.write("1년 전, 그 종목에 투자했다면 지금 얼마가 되어 있을
 투자금 = st.number_input("투자할 금액 (원)", min_value=0, value=100000, step=100000)
 
 if st.button("수익률 확인하기"):
-    # 표에 있으면 코드로 바꾸고, 없으면 입력한 그대로 사용
-    종목 = 종목표.get(이름.strip(), 이름.strip())
+    # 표에 있으면 코드로 바꾸고, 없으면 입력한 글자를 대문자로 바꿔 사용(예: aapl → AAPL)
+    종목 = 종목표.get(이름.strip().lower(), 이름.strip().upper())
 
     데이터 = yf.download(종목, period="1y")
 
