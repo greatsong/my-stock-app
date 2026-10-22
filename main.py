@@ -39,7 +39,7 @@ TICKER_MAP = {
 
 
 def resolve_ticker(name: str) -> str:
-    """입력한 이름을 티커로 변환. 매핑에 없으면 입력값을 그대로 티커로 사용."""
+    """입력한 이름을 티커로 변환. 매핑에 없으면 입력값을 대문자로 바꿔 티커로 사용."""
     key = name.strip().lower()
     return TICKER_MAP.get(key, name.strip().upper())
 
